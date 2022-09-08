@@ -36,4 +36,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:textAllCaps="false"
+        android:text="Speedometer"
+        android:onClick="onSpeedometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

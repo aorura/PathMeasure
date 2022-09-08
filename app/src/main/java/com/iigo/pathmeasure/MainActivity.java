@@ -32,4 +32,8 @@ public class MainActivity extends AppCompatActivity {
     public void onStartCarTrack(View view) {
         startActivity(new Intent(this, CarTrackActivity.class));
     }
+
+    public void onSpeedometer(View view) {
+        startActivity(new Intent(this, SpeedometerActivity.class));
+    }
 }
