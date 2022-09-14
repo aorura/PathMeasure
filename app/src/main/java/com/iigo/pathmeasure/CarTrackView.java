@@ -11,7 +11,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.graphics.Shader;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -31,13 +30,13 @@ public class CarTrackView extends View {
         init();
     }
 
-    public CarTrackView(Context context, @Nullable AttributeSet attrs) {
+    public CarTrackView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         init();
     }
 
-    public CarTrackView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public CarTrackView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         init();

@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -19,12 +18,12 @@ public class TestView extends View {
         init();
     }
 
-    public TestView(Context context, @Nullable AttributeSet attrs) {
+    public TestView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public TestView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public TestView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }

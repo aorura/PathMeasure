@@ -9,7 +9,6 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -36,13 +35,13 @@ public class Loading1View extends View {
         init();
     }
 
-    public Loading1View(Context context, @Nullable AttributeSet attrs) {
+    public Loading1View(Context context,  AttributeSet attrs) {
         super(context, attrs);
 
         init();
     }
 
-    public Loading1View(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public Loading1View(Context context,  AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         init();
