@@ -85,7 +85,7 @@ public class SpeedometerView extends View {
         carBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.icon_car);
         diagnalBitmap = getBitmap(mContext, R.drawable.ic_active_bar_tick_lrg_70);
         activeBar = BitmapFactory.decodeResource(getResources(), R.drawable.active_bar_tick_lrg_70_dp);
-        group = BitmapFactory.decodeResource(getResources(), R.drawable.group);
+        group = BitmapFactory.decodeResource(getResources(), R.drawable.group_60);
 
 //        Drawable drawable = getResources().getDrawable(R.drawable.ic_active_bar_tick_lrg_70);
 //        drawable.setBounds(0,0,100,100);
@@ -156,8 +156,12 @@ public class SpeedometerView extends View {
         pathMeasure.getPosTan(distance, pos, tan);
         int degree = (int) (Math.atan2(tan[1], tan[0]) * 180 / Math.PI);
 
+        Matrix groupMatrix = new Matrix();
+        pathMeasure.getMatrix(distance, groupMatrix, PathMeasure.TANGENT_MATRIX_FLAG | PathMeasure.POSITION_MATRIX_FLAG);
+        groupMatrix.preTranslate(-group.getWidth()*0.48f, -group.getHeight()*0.5f);
+        canvas.drawBitmap(group, groupMatrix, carPaint);
         Log.d("aorura", "Degree: " + degree);
-        canvas.drawBitmap(group, pos[0]-group.getWidth()/2, pos[1]-group.getHeight()/2,carPaint);
+        //canvas.drawBitmap(group, pos[0]-group.getWidth()/2, pos[1]-group.getHeight()/2,carPaint);
 
         Matrix diagnalMatrix = new Matrix();
         pathMeasure.getMatrix(distance, diagnalMatrix, PathMeasure.TANGENT_MATRIX_FLAG | PathMeasure.POSITION_MATRIX_FLAG);
