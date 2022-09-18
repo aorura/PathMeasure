@@ -26,6 +26,8 @@
 
         <activity android:name=".SpeedometerActivity"/>
 
+        <activity android:name=".CadillacEnergyActivity"/>
+
     </application>
 
 </manifest>

@@ -37,4 +37,8 @@ public class MainActivity extends AppCompatActivity {
     public void onSpeedometer(View view) {
         startActivity(new Intent(this, SpeedometerActivity.class));
     }
+
+    public void onCadillacEnergy(View view) {
+        startActivity(new Intent(this, CadillacEnergyActivity.class));
+    }
 }

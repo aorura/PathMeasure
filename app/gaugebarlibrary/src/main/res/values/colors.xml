@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="inside_low_line_color">#ff2E2E3B</color>
+    <color name="gaugebar_progress_color">#ff7294c2</color>
+    <color name="gaugebar_bg_color">#ff2E2E3B</color>
+
+    <color name="inside_arc_start_color">#ff7294c2</color>
+    <color name="inside_arc_end_color">#00000000</color>
+</resources>
