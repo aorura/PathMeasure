@@ -77,11 +77,11 @@ public class GaugeBarProgressPainterImp implements GaugeBarProgressPainter {
 
     @Override
     public void draw(Canvas canvas) {
-        canvas.drawArc(mCircle, mStartAngle, mCurrentAngle, false, mProgressBarPaint);
+        //canvas.drawArc(mCircle, mStartAngle, mCurrentAngle, false, mProgressBarPaint);
         mArcStartAngle = (mStartAngle + mCurrentAngle) * mArcSizefactor;
         if (mArcStartAngle < mStartAngle) mArcStartAngle = mStartAngle;
         mArcCurrentAngle = mCurrentAngle - (mArcStartAngle - mStartAngle);
-        canvas.drawArc(mInsideCircle, mArcStartAngle, mArcCurrentAngle, true, mArcPaint);
+        //canvas.drawArc(mInsideCircle, mArcStartAngle, mArcCurrentAngle, true, mArcPaint);
     }
 
     @Override

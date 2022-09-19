@@ -60,8 +60,8 @@ public class InsideLowRangeLinePainterImp implements InsideLowRangeLinePainter {
   }
 
   @Override public void draw(Canvas canvas) {
-    canvas.drawArc(circle, startAngle, endAngle, false, paint);
-    canvas.drawArc(circle, startAngle, endAngle *0.1f, false, paintRed);
+    //canvas.drawArc(circle, startAngle, endAngle, false, paint);
+    //canvas.drawArc(circle, startAngle, endAngle *0.1f, false, paintRed);
   }
 
   @Override public void setColor(int color) {
