@@ -32,6 +32,7 @@ public class GaugeBarProgressBgPainterImp implements GaugeBarProgressBgPainter {
     private int lineOneTwoInterval;
     private int lineTickWidth;
     private int lineTwoX;
+    private Path progressPath;
 
     public GaugeBarProgressBgPainterImp(int color, int margin, Context context) {
         this.extraMargin = margin;
@@ -51,8 +52,8 @@ public class GaugeBarProgressBgPainterImp implements GaugeBarProgressBgPainter {
     }
 
     private void initPainter() {
-        paint = new Paint();
-        paint.setAntiAlias(true);
+        paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        //paint.setAntiAlias(true);
         //paint.setStrokeWidth(strokeWidth);
         //paint.setColor(color);
         paint.setStyle(Paint.Style.FILL);
@@ -87,7 +88,15 @@ public class GaugeBarProgressBgPainterImp implements GaugeBarProgressBgPainter {
         lineTwoPath.moveTo(lineTwoX, mHeight*0.75f);
         lineTwoPath.lineTo(lineTwoX+lineTickWidth, mHeight*0.75f);
 
-        paint.setShader(new LinearGradient(0,0, mWidth, mHeight,0xFF8FA3AE, 0x008fA3AE, Shader.TileMode.CLAMP));
+        float ratiog = mHeight/mWidth;
+        paint.setShader(new LinearGradient(0,0, mWidth*0.5f, mHeight*0.5f,0xFF8FA3AE, 0x008fA3AE, Shader.TileMode.CLAMP));
+
+        float ratio = 0.9f;
+        progressPath = new Path();
+        progressPath.moveTo(lineTwoX,mHeight);
+        progressPath.lineTo(mWidth,mHeight*ratio);
+        progressPath.lineTo(lineTwoX,mHeight*ratio);
+        progressPath.close();
 
     }
 
@@ -95,7 +104,8 @@ public class GaugeBarProgressBgPainterImp implements GaugeBarProgressBgPainter {
     public void draw(Canvas canvas) {
         canvas.drawLine(lineOneWidth /2,0, lineOneWidth /2, mHeight, lineOnePaint);
         canvas.drawPath(lineTwoPath, lineTwoPaint);
-        canvas.drawRect(lineTwoX,mHeight, mWidth,mHeight/2, paint);
+        canvas.drawPath(progressPath,paint);
+        //canvas.drawRect(lineTwoX,mHeight, mWidth,mHeight*0.1f, paint);
         
     }
 
