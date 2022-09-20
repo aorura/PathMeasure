@@ -8,7 +8,6 @@ import android.view.View;
 
 import com.lge.vs.gaugebarlibrary.gaugebar.cadillac.GaugeBarProgressBgPainterImp;
 import com.lge.vs.gaugebarlibrary.gaugebar.cadillac.GaugeBarProgressPainterImp;
-import com.lge.vs.gaugebarlibrary.gaugebar.cadillac.InsideLowRangeLinePainterImp;
 import com.lge.vs.gaugebarlibrary.gaugebar.common.GaugeBarProgressBgPainter;
 import com.lge.vs.gaugebarlibrary.gaugebar.common.GaugeBarProgressPainter;
 import com.lge.vs.gaugebarlibrary.utils.EtcUtils;
@@ -16,7 +15,6 @@ import com.lge.vs.gaugebarlibrary.utils.EtcUtils;
 public class CadillacEnergyRangeGaugeBarView extends View {
     private GaugeBarProgressBgPainter gaugeBarProgressBgPainter;
     private GaugeBarProgressPainter gaugeBarProgressPainter;
-    private InsideLowRangeLinePainterImp insideLowRangeLinePainter;
     private int min = 0;
     private int max = 100;
     private float value;
@@ -56,7 +54,6 @@ public class CadillacEnergyRangeGaugeBarView extends View {
 
         gaugeBarProgressBgPainter.onSizeChanged(h, w);
         gaugeBarProgressPainter.onSizeChanged(h, w);
-        insideLowRangeLinePainter.onSizeChanged(h, w);
     }
 
     private void init(Context context, AttributeSet attributeSet) {
@@ -67,7 +64,6 @@ public class CadillacEnergyRangeGaugeBarView extends View {
         setLayerType(LAYER_TYPE_SOFTWARE, null);
         gaugeBarProgressBgPainter = new GaugeBarProgressBgPainterImp(gaugeBarProgressBgColor, marginPixels, getContext());
         gaugeBarProgressPainter = new GaugeBarProgressPainterImp(gaugeBarProgressColor, max, marginPixels, getContext());
-        insideLowRangeLinePainter = new InsideLowRangeLinePainterImp(insideLowRangeProgressColor, getContext());
         attributes.recycle();
     }
 
@@ -84,7 +80,6 @@ public class CadillacEnergyRangeGaugeBarView extends View {
         super.onDraw(canvas);
         gaugeBarProgressBgPainter.draw(canvas); // dash-progress
         gaugeBarProgressPainter.draw(canvas);
-        insideLowRangeLinePainter.draw(canvas); // inside-line progress
 
         invalidate();
     }
