@@ -91,6 +91,12 @@ public class CadillacEnergyRangeGaugeBarView extends View {
         }
     }
 
+    public void setColor(int color) {
+        if (gaugeBarProgressPainter != null) {
+            gaugeBarProgressPainter.setColor(color);
+        }
+    }
+
     public float getMax() {
         return max;
     }

@@ -53,7 +53,7 @@ public class GaugeBarProgressPainterImp implements GaugeBarProgressPainter {
         mPath.lineTo(mLeftMargin,mHeight*mRatio);
         mPath.close();
         if (mEnableGradient != true) return;
-        mPaint.setShader(new LinearGradient(0,0, mWidth, mHeight*mRatio,0x1E8FA3AE, 0x008fA3AE, Shader.TileMode.CLAMP));
+        mPaint.setShader(new LinearGradient(0,0, mWidth, mHeight,mColor, 0x008fA3AE, Shader.TileMode.CLAMP));
     }
 
     @Override

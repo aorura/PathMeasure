@@ -25,7 +25,15 @@ public class CadillacEnergyActivity extends AppCompatActivity {
     private class SeekListener implements SeekBar.OnSeekBarChangeListener {
 
         @Override public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            if (progress >= 0 && progress < 30) {
+                cadillacView.setColor(getResources().getColor(R.color.cadillac_red_color));
+            } else if (progress >= 30 && progress < 60) {
+                cadillacView.setColor(getResources().getColor(R.color.cadillac_progress_color));
+            } else {
+                cadillacView.setColor(getResources().getColor(R.color.cadillac_blue_color));
+            }
             cadillacView.setProgress(progress);
+
         }
 
         @Override public void onStartTrackingTouch(SeekBar seekBar) {

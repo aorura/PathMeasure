@@ -21,7 +21,7 @@
         android:layout_width="300dp"
         android:layout_height="328.31dp"
         app:inside_low_line_color="@color/inside_low_line_color"
-        app:gaugebar_progress_color="@color/gaugebar_progress_color"
+        app:gaugebar_progress_color="@color/cadillac_progress_color"
         app:gaugebar_bg_color="@color/gaugebar_bg_color"
         app:max="100"
         android:layout_marginTop="70dp"

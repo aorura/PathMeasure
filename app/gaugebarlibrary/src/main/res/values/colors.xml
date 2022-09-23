@@ -6,4 +6,8 @@
 
     <color name="inside_arc_start_color">#ff7294c2</color>
     <color name="inside_arc_end_color">#00000000</color>
+
+    <color name="cadillac_progress_color">#F08FA3AE</color>
+    <color name="cadillac_red_color">#F0FF0C0E</color>
+    <color name="cadillac_blue_color">#F000FFFF</color>
 </resources>
